@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import "tailwindcss";
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: linear-gradient(135deg, #19053d, #0c001e);
+  color: white;
+  margin: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Custom select dropdown styling for dark theme */
+select option {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px;
+}
+
+select option:hover {
+  background-color: rgba(193, 1, 251, 0.2);
+}
+
+/* Hide scrollbars */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+@theme inline {
+  --color-primary: #c101fb;
+  --color-secondary: #4a2371;
+  --color-background: #19053d;
+  --color-foreground: #ffffff;
+  --color-muted: #4a2371;
+  --color-muted-foreground: #c101fb;
+  --color-accent: #c101fb;
+  --color-accent-foreground: #ffffff;
+  --color-border: rgba(193, 1, 251, 0.3);
+  --color-input: rgba(193, 1, 251, 0.1);
+  --color-ring: #c101fb;
+}
+
+:root {
+  --background: #19053d;
+  --foreground: #ffffff;
+  --primary: #c101fb;
+  --primary-foreground: #ffffff;
+  --secondary: #4a2371;
+  --secondary-foreground: #ffffff;
+  --muted: #4a2371;
+  --muted-foreground: #c101fb;
+  --accent: #c101fb;
+  --accent-foreground: #ffffff;
+  --border: rgba(193, 1, 251, 0.3);
+  --input: rgba(193, 1, 251, 0.1);
+  --ring: #c101fb;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
