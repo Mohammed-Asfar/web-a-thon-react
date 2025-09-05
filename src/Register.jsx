@@ -67,9 +67,9 @@ export default function RegisterPage({ onNavigate }) {
       members.push(
         <div
           key={i}
-          className="member-section border border-dashed border-white p-3 md:p-4 mb-4 md:mb-5 rounded-lg"
+          className="member-section border border-dashed border-white p-2 md:p-3 lg:p-4 mb-3 md:mb-4 lg:mb-5 rounded-lg"
         >
-          <h3 className="text-xs md:text-sm mb-3 md:mb-4 text-center text-pink-300">
+          <h3 className="text-xs md:text-sm mb-2 md:mb-3 lg:mb-4 text-center text-pink-300">
             Team Member {i}
           </h3>
 
@@ -84,7 +84,7 @@ export default function RegisterPage({ onNavigate }) {
             required
             value={formData[`memberName${i}`] || ""}
             onChange={handleInputChange}
-            className={`w-full p-3 mb-2 bg-white/10 border rounded-lg text-xs text-white placeholder-white/60 outline-none transition-colors ${
+            className={`w-full p-2 md:p-3 mb-2 bg-white/10 border rounded-lg text-xs md:text-sm text-white placeholder-white/60 outline-none transition-colors ${
               errors[`memberName${i}`]
                 ? "border-red-500 focus:border-red-500"
                 : "border-white/20 focus:border-[#c101fb] focus:ring-1 focus:ring-[#c101fb]"
@@ -108,7 +108,7 @@ export default function RegisterPage({ onNavigate }) {
             required
             value={formData[`memberContact${i}`] || ""}
             onChange={handleInputChange}
-            className={`w-full p-3 mb-2 bg-white/10 border rounded-lg text-xs text-white placeholder-white/60 outline-none transition-colors ${
+            className={`w-full p-2 md:p-3 mb-2 bg-white/10 border rounded-lg text-xs md:text-sm text-white placeholder-white/60 outline-none transition-colors ${
               errors[`memberContact${i}`]
                 ? "border-red-500 focus:border-red-500"
                 : "border-white/20 focus:border-[#c101fb] focus:ring-1 focus:ring-[#c101fb]"
@@ -132,7 +132,7 @@ export default function RegisterPage({ onNavigate }) {
             required
             value={formData[`memberEmail${i}`] || ""}
             onChange={handleInputChange}
-            className={`w-full p-3 mb-2 bg-white/10 border rounded-lg text-xs text-white placeholder-white/60 outline-none transition-colors ${
+            className={`w-full p-2 md:p-3 mb-2 bg-white/10 border rounded-lg text-xs md:text-sm text-white placeholder-white/60 outline-none transition-colors ${
               errors[`memberEmail${i}`]
                 ? "border-red-500 focus:border-red-500"
                 : "border-white/20 focus:border-[#c101fb] focus:ring-1 focus:ring-[#c101fb]"
@@ -156,7 +156,7 @@ export default function RegisterPage({ onNavigate }) {
             required
             value={formData[`memberCollege${i}`] || ""}
             onChange={handleInputChange}
-            className={`w-full p-3 mb-2 bg-white/10 border rounded-lg text-xs text-white placeholder-white/60 outline-none transition-colors ${
+            className={`w-full p-2 md:p-3 mb-2 bg-white/10 border rounded-lg text-xs md:text-sm text-white placeholder-white/60 outline-none transition-colors ${
               errors[`memberCollege${i}`]
                 ? "border-red-500 focus:border-red-500"
                 : "border-white/20 focus:border-[#c101fb] focus:ring-1 focus:ring-[#c101fb]"
@@ -188,18 +188,18 @@ export default function RegisterPage({ onNavigate }) {
       </div>
 
       {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-black/60 flex justify-between items-center py-2 md:py-4 z-50 backdrop-blur-sm px-4">
+      <nav className="fixed top-0 w-full bg-black/60 flex justify-between items-center py-2 md:py-4 z-50 backdrop-blur-sm px-3 md:px-4">
         <div className="flex items-center">
           <img
             src="/logo.png"
             alt="Web-a-thon Logo"
-            className="h-8 md:h-10 w-auto mr-4 hover:scale-110 transition-transform duration-300"
+            className="h-6 md:h-8 lg:h-10 w-auto mr-2 md:mr-4 hover:scale-110 transition-transform duration-300"
           />
         </div>
-        <div className="flex gap-2 md:gap-5">
+        <div className="flex gap-1 md:gap-5">
           <button
             onClick={() => onNavigate?.("home")}
-            className="text-white text-xs md:text-sm mx-2 md:mx-5 hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1 bg-transparent border-none cursor-pointer"
+            className="text-white text-xs md:text-sm px-2 md:px-3 py-1 md:py-2 hover:text-[#c101fb] transition-all duration-300 hover:scale-105 bg-transparent border-none cursor-pointer rounded-md"
           >
             Home
           </button>
@@ -208,10 +208,10 @@ export default function RegisterPage({ onNavigate }) {
 
       {/* Register Form */}
       <div
-        className="form-container max-w-4xl mx-auto mt-24 md:mt-32 mb-12 bg-black/70 p-4 md:p-10 rounded-xl shadow-lg relative z-20"
+        className="form-container max-w-4xl mx-auto mt-20 md:mt-24 lg:mt-32 mb-8 md:mb-12 bg-black/70 p-3 md:p-6 lg:p-10 rounded-xl shadow-lg relative z-20 mx-3 md:mx-auto"
         id="register"
       >
-        <h1 className="text-lg md:text-2xl text-center mb-6 md:mb-8 text-shadow-lg animate-pulse">
+        <h1 className="text-sm md:text-lg lg:text-2xl text-center mb-4 md:mb-6 lg:mb-8 text-shadow-lg animate-pulse px-2">
           Register for Web-a-thon 2025
         </h1>
 
@@ -222,7 +222,7 @@ export default function RegisterPage({ onNavigate }) {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           action="/success.html"  // <-- redirect after successful submit
-          className="space-y-6"
+          className="space-y-4 md:space-y-6"
           onSubmit={(e) => {
             if (!validateForm()) {
               e.preventDefault();
@@ -245,7 +245,7 @@ export default function RegisterPage({ onNavigate }) {
               required
               value={formData.teamName || ""}
               onChange={handleInputChange}
-              className={`w-full p-3 bg-white/10 border rounded-lg text-xs text-white placeholder-white/60 outline-none transition-colors ${
+              className={`w-full p-3 md:p-4 bg-white/10 border rounded-lg text-xs md:text-sm text-white placeholder-white/60 outline-none transition-colors ${
                 errors.teamName
                   ? "border-red-500 focus:border-red-500"
                   : "border-white/20 focus:border-[#c101fb] focus:ring-1 focus:ring-[#c101fb]"
@@ -271,7 +271,7 @@ export default function RegisterPage({ onNavigate }) {
                 handleTeamSizeChange(e);
                 handleInputChange(e);
               }}
-              className={`w-full p-3 bg-white/10 border rounded-lg text-xs text-white outline-none transition-colors ${
+              className={`w-full p-3 md:p-4 bg-white/10 border rounded-lg text-xs md:text-sm text-white outline-none transition-colors ${
                 errors.teamSize
                   ? "border-red-500 focus:border-red-500"
                   : "border-white/20 focus:border-[#c101fb] focus:ring-1 focus:ring-[#c101fb]"
@@ -290,7 +290,7 @@ export default function RegisterPage({ onNavigate }) {
 
           <Button
             type="submit"
-            className="w-full py-4 bg-[#c101fb] hover:bg-[#4a2371] text-white font-bold rounded-lg transition-colors text-sm"
+            className="w-full py-3 md:py-4 bg-[#c101fb] hover:bg-[#4a2371] text-white font-bold rounded-lg transition-colors text-xs md:text-sm"
           >
             Submit Registration
           </Button>
