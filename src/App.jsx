@@ -28,44 +28,54 @@ export default function App() {
       </div>
 
       {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-black/60 flex justify-center py-2 md:py-4 z-50 backdrop-blur-sm">
-        <div className="flex flex-wrap justify-center gap-2 md:gap-5 px-4">
-          <a
-            href="#about"
-            className="text-white text-xs md:text-sm hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1"
-          >
-            About
-          </a>
-          <a
-            href="#highlights"
-            className="text-white text-xs md:text-sm hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1"
-          >
-            Highlights
-          </a>
-          <a
-            href="#rules"
-            className="text-white text-xs md:text-sm hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1"
-          >
-            Rules
-          </a>
-          <a
-            href="#date"
-            className="text-white text-xs md:text-sm hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1"
-          >
-            Date
-          </a>
-          <a
-            href="#rewards"
-            className="text-white text-xs md:text-sm hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1"
-          >
-            Rewards
-          </a>
-          <button
-            onClick={() => navigateTo("register")}
-            className="text-white text-xs md:text-sm hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1 bg-transparent border-none cursor-pointer"
-          >
-            Register
-          </button>
+      <nav className="fixed top-0 w-full bg-black/60 py-2 md:py-4 z-50 backdrop-blur-sm px-4">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center">
+            <img
+              src="/logo.png"
+              alt="Web-a-thon Logo"
+              className="h-8 md:h-10 w-auto mr-4 hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div className="flex flex-wrap justify-center gap-2 md:gap-5 absolute left-1/2 transform -translate-x-1/2">
+            <a
+              href="#about"
+              className="text-white text-xs md:text-sm hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1"
+            >
+              About
+            </a>
+            <a
+              href="#highlights"
+              className="text-white text-xs md:text-sm hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1"
+            >
+              Highlights
+            </a>
+            <a
+              href="#rules"
+              className="text-white text-xs md:text-sm hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1"
+            >
+              Rules
+            </a>
+            <a
+              href="#date"
+              className="text-white text-xs md:text-sm hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1"
+            >
+              Date
+            </a>
+            <a
+              href="#rewards"
+              className="text-white text-xs md:text-sm hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1"
+            >
+              Rewards
+            </a>
+          </div>
+          <div className="inline-flex cursor-pointer items-center justify-center rounded-full bg-white dark:bg-gray-950 text-xs font-medium backdrop-blur-3xl">
+            <button
+              onClick={() => navigateTo("register")}
+              className="inline-flex rounded-full text-center group items-center justify-center bg-gradient-to-tr from-[#c101fb]/20 via-[#4a2371]/30 to-transparent text-white border-[#c101fb]/50 border-[1px] hover:bg-gradient-to-tr hover:from-[#c101fb]/30 hover:via-[#4a2371]/40 hover:to-transparent transition-all py-2 px-6 md:py-3 md:px-8">
+              Register
+            </button>
+          </div>
         </div>
       </nav>
 

@@ -201,7 +201,14 @@ export default function RegisterPage({ onNavigate }) {
       </div>
 
       {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-black/60 flex justify-center py-2 md:py-4 z-50 backdrop-blur-sm">
+      <nav className="fixed top-0 w-full bg-black/60 flex justify-between items-center py-2 md:py-4 z-50 backdrop-blur-sm px-4">
+        <div className="flex items-center">
+          <img
+            src="/logo.png"
+            alt="Web-a-thon Logo"
+            className="h-8 md:h-10 w-auto mr-4 hover:scale-110 transition-transform duration-300"
+          />
+        </div>
         <div className="flex gap-2 md:gap-5">
           <button
             onClick={() => onNavigate("home")}
@@ -209,12 +216,6 @@ export default function RegisterPage({ onNavigate }) {
           >
             Home
           </button>
-          <a
-            href="#register"
-            className="text-white text-xs md:text-sm mx-2 md:mx-5 hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1"
-          >
-            Register
-          </a>
         </div>
       </nav>
 
