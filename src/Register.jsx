@@ -36,8 +36,7 @@ export default function RegisterPage({ onNavigate }) {
       if (!contact?.trim()) {
         newErrors[`memberContact${i}`] = "Contact number is required";
       } else if (!/^[6-9]\d{9}$/.test(contact.trim())) {
-        newErrors[`memberContact${i}`] =
-          "Enter valid 10-digit mobile number";
+        newErrors[`memberContact${i}`] = "Enter valid 10-digit mobile number";
       }
       if (!email?.trim()) {
         newErrors[`memberEmail${i}`] = "Email is required";
@@ -51,34 +50,6 @@ export default function RegisterPage({ onNavigate }) {
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  };
-
-  const encode = (data) =>
-    Object.keys(data)
-      .map(
-        (key) =>
-          encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
-      const submission = { ...formData, teamSize, "form-name": "register" };
-
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(submission),
-      })
-        .then(() => {
-          alert("Registration Submitted Successfully!");
-          setFormData({});
-          setTeamSize("1");
-        })
-        .catch((error) => alert("Error: " + error));
-    }
   };
 
   const handleInputChange = (e) => {
@@ -254,8 +225,12 @@ export default function RegisterPage({ onNavigate }) {
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
           className="space-y-6"
+          onSubmit={(e) => {
+            if (!validateForm()) {
+              e.preventDefault();
+            }
+          }}
         >
           <input type="hidden" name="form-name" value="register" />
           <input type="hidden" name="bot-field" />
