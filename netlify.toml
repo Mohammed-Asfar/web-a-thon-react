@@ -1,4 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = "dist" # Vite default; use "build" for CRA. Change if needed.
+
+# SPA fallback (keeps React Router working on refresh)
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security headers (optional)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

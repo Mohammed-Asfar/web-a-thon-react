@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Web-a-thon</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Hidden static form for Netlify build-time detection -->
+    <form name="register" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="register" />
+      <input type="text" name="teamName" />
+      <select name="teamSize">
+        <option>1</option><option>2</option><option>3</option>
+      </select>
+
+      <!-- Include at least one set of member fields so they appear in Netlify UI -->
+      <input type="text" name="memberName1" />
+      <input type="text" name="memberContact1" />
+      <input type="email" name="memberEmail1" />
+      <input type="text" name="memberCollege1" />
+
+      <!-- Honeypot -->
+      <input type="text" name="bot-field" />
+    </form>
+    <!-- Your app bundle gets injected by your build tool -->
+  </body>
+</html>

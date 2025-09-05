@@ -5,7 +5,7 @@ import { Button } from "./components/ui/button";
 export default function RegisterPage({ onNavigate }) {
   const [teamSize, setTeamSize] = useState("1");
   const [errors, setErrors] = useState({});
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({ teamSize: "1" });
 
   const handleTeamSizeChange = (e) => {
     setTeamSize(e.target.value);
@@ -24,7 +24,7 @@ export default function RegisterPage({ onNavigate }) {
       newErrors.teamSize = "Please select team size";
     }
 
-    for (let i = 1; i <= parseInt(teamSize); i++) {
+    for (let i = 1; i <= parseInt(teamSize, 10); i++) {
       const name = formData[`memberName${i}`];
       const contact = formData[`memberContact${i}`];
       const email = formData[`memberEmail${i}`];
@@ -63,7 +63,7 @@ export default function RegisterPage({ onNavigate }) {
 
   const renderMemberFields = () => {
     const members = [];
-    for (let i = 1; i <= parseInt(teamSize); i++) {
+    for (let i = 1; i <= parseInt(teamSize, 10); i++) {
       members.push(
         <div
           key={i}
@@ -198,7 +198,7 @@ export default function RegisterPage({ onNavigate }) {
         </div>
         <div className="flex gap-2 md:gap-5">
           <button
-            onClick={() => onNavigate("home")}
+            onClick={() => onNavigate?.("home")}
             className="text-white text-xs md:text-sm mx-2 md:mx-5 hover:text-[#c101fb] transition-all duration-300 hover:scale-110 px-2 py-1 bg-transparent border-none cursor-pointer"
           >
             Home
@@ -215,16 +215,13 @@ export default function RegisterPage({ onNavigate }) {
           Register for Web-a-thon 2025
         </h1>
 
-        {/* Hidden static form for Netlify build detection */}
-        <form name="register" netlify netlify-honeypot="bot-field" hidden>
-          <input type="text" name="teamName" />
-        </form>
-
+        {/* REAL FORM (Netlify will process this) */}
         <form
           name="register"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          action="/success.html"  // <-- redirect after successful submit
           className="space-y-6"
           onSubmit={(e) => {
             if (!validateForm()) {
@@ -232,6 +229,7 @@ export default function RegisterPage({ onNavigate }) {
             }
           }}
         >
+          {/* Required hidden fields */}
           <input type="hidden" name="form-name" value="register" />
           <input type="hidden" name="bot-field" />
 
