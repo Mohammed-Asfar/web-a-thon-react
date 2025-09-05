@@ -40,7 +40,8 @@ export default function RegisterPage({ onNavigate }) {
       if (!contact?.trim()) {
         newErrors[`memberContact${i}`] = "Contact number is required";
       } else if (!/^[6-9]\d{9}$/.test(contact.trim())) {
-        newErrors[`memberContact${i}`] = "Enter valid 10-digit mobile number";
+        newErrors[`memberContact${i}`] =
+          "Enter valid 10-digit mobile number";
       }
 
       if (!email?.trim()) {
@@ -58,13 +59,32 @@ export default function RegisterPage({ onNavigate }) {
     return Object.keys(newErrors).length === 0;
   };
 
+  // Encode data for Netlify
+  const encode = (data) =>
+    Object.keys(data)
+      .map(
+        (key) =>
+          encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-      alert("Registration Submitted Successfully!");
-      // Here you would typically send the data to your backend
-      console.log("Form Data:", { ...formData, teamSize });
+      const submission = { ...formData, teamSize, "form-name": "register" };
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(submission),
+      })
+        .then(() => {
+          alert("Registration Submitted Successfully!");
+          setFormData({});
+          setTeamSize("1");
+        })
+        .catch((error) => alert("Error: " + error));
     }
   };
 
@@ -90,6 +110,7 @@ export default function RegisterPage({ onNavigate }) {
             Team Member {i}
           </h3>
 
+          {/* Name */}
           <label htmlFor={`memberName${i}`} className="block text-xs mb-2">
             Name
           </label>
@@ -113,7 +134,11 @@ export default function RegisterPage({ onNavigate }) {
             </p>
           )}
 
-          <label htmlFor={`memberContact${i}`} className="block text-xs mb-2">
+          {/* Contact */}
+          <label
+            htmlFor={`memberContact${i}`}
+            className="block text-xs mb-2"
+          >
             Contact Number
           </label>
           <input
@@ -136,6 +161,7 @@ export default function RegisterPage({ onNavigate }) {
             </p>
           )}
 
+          {/* Email */}
           <label htmlFor={`memberEmail${i}`} className="block text-xs mb-2">
             Email ID
           </label>
@@ -159,7 +185,11 @@ export default function RegisterPage({ onNavigate }) {
             </p>
           )}
 
-          <label htmlFor={`memberCollege${i}`} className="block text-xs mb-2">
+          {/* College */}
+          <label
+            htmlFor={`memberCollege${i}`}
+            className="block text-xs mb-2"
+          >
             College Name
           </label>
           <input
@@ -228,13 +258,29 @@ export default function RegisterPage({ onNavigate }) {
           Register for Web-a-thon 2025
         </h1>
 
+        {/* Hidden static form for Netlify build detection */}
         <form
-          name="contact"
+          name="register"
+          netlify
+          netlify-honeypot="bot-field"
+          hidden
+        >
+          <input type="text" name="teamName" />
+        </form>
+
+        <form
+          name="register"
           method="POST"
-          onSubmit={handleSubmit}
           data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
           className="space-y-6"
         >
+          {/* Required hidden fields */}
+          <input type="hidden" name="form-name" value="register" />
+          <input type="hidden" name="bot-field" />
+
+          {/* Team Name */}
           <div>
             <label htmlFor="teamName" className="block text-xs mb-2">
               Team Name
@@ -258,6 +304,7 @@ export default function RegisterPage({ onNavigate }) {
             )}
           </div>
 
+          {/* Team Size */}
           <div>
             <label htmlFor="teamSize" className="block text-xs mb-2">
               Team Size
