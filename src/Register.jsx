@@ -232,6 +232,7 @@ export default function RegisterPage({ onNavigate }) {
           name="contact"
           method="POST"
           onSubmit={handleSubmit}
+          data-netlify="true"
           className="space-y-6"
         >
           <div>
