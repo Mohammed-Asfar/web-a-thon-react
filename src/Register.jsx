@@ -14,19 +14,16 @@ export default function RegisterPage({ onNavigate }) {
   const validateForm = () => {
     const newErrors = {};
 
-    // Team name validation
     if (!formData.teamName?.trim()) {
       newErrors.teamName = "Team name is required";
     } else if (formData.teamName.trim().length < 3) {
       newErrors.teamName = "Team name must be at least 3 characters";
     }
 
-    // Team size validation
     if (!teamSize) {
       newErrors.teamSize = "Please select team size";
     }
 
-    // Member validation
     for (let i = 1; i <= parseInt(teamSize); i++) {
       const name = formData[`memberName${i}`];
       const contact = formData[`memberContact${i}`];
@@ -36,20 +33,17 @@ export default function RegisterPage({ onNavigate }) {
       if (!name?.trim()) {
         newErrors[`memberName${i}`] = "Name is required";
       }
-
       if (!contact?.trim()) {
         newErrors[`memberContact${i}`] = "Contact number is required";
       } else if (!/^[6-9]\d{9}$/.test(contact.trim())) {
         newErrors[`memberContact${i}`] =
           "Enter valid 10-digit mobile number";
       }
-
       if (!email?.trim()) {
         newErrors[`memberEmail${i}`] = "Email is required";
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
         newErrors[`memberEmail${i}`] = "Enter valid email address";
       }
-
       if (!college?.trim()) {
         newErrors[`memberCollege${i}`] = "College name is required";
       }
@@ -59,7 +53,6 @@ export default function RegisterPage({ onNavigate }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Encode data for Netlify
   const encode = (data) =>
     Object.keys(data)
       .map(
@@ -92,7 +85,6 @@ export default function RegisterPage({ onNavigate }) {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -135,10 +127,7 @@ export default function RegisterPage({ onNavigate }) {
           )}
 
           {/* Contact */}
-          <label
-            htmlFor={`memberContact${i}`}
-            className="block text-xs mb-2"
-          >
+          <label htmlFor={`memberContact${i}`} className="block text-xs mb-2">
             Contact Number
           </label>
           <input
@@ -186,10 +175,7 @@ export default function RegisterPage({ onNavigate }) {
           )}
 
           {/* College */}
-          <label
-            htmlFor={`memberCollege${i}`}
-            className="block text-xs mb-2"
-          >
+          <label htmlFor={`memberCollege${i}`} className="block text-xs mb-2">
             College Name
           </label>
           <input
@@ -259,12 +245,7 @@ export default function RegisterPage({ onNavigate }) {
         </h1>
 
         {/* Hidden static form for Netlify build detection */}
-        <form
-          name="register"
-          netlify
-          netlify-honeypot="bot-field"
-          hidden
-        >
+        <form name="register" netlify netlify-honeypot="bot-field" hidden>
           <input type="text" name="teamName" />
         </form>
 
@@ -276,7 +257,6 @@ export default function RegisterPage({ onNavigate }) {
           onSubmit={handleSubmit}
           className="space-y-6"
         >
-          {/* Required hidden fields */}
           <input type="hidden" name="form-name" value="register" />
           <input type="hidden" name="bot-field" />
 
