@@ -103,7 +103,7 @@ export default function App() {
         <HeroSection
           title="Welcome to Event"
           subtitle={{
-            regular: "WEB-A-THON ",
+            regular: "WEB-A-THON'25 ",
             gradient: "Transform your ideas into reality",
           }}
           description='"Craft the Web. Conquer the Challenge."'
@@ -133,13 +133,13 @@ export default function App() {
           About
         </h2>
         <p className="text-xs md:text-sm leading-relaxed hover:scale-105 transition-transform duration-300 px-4 md:px-0">
-          {`Welcome to Web-a-thon – the ultimate website quest!`}
+          {`Welcome to Web-a-thon'25 – the ultimate website quest!`}
           <br className="hidden md:block" />
-          {`You've got 2 hours on the clock, one topic, and a bunch of surprise quests waiting to crash your comfort zone.`}
+          {`You've got 2 hours on the clock ⏱, one topic, and a bunch of surprise quests waiting to crash your comfort zone.`}
           <br className="hidden md:block" />
-          {`Every 15 minutes, a new twist appears. Complete it, level up, and keep building your site stronger and sharper. There's no "Round 2" or "next stage" – this is the one and only boss level.`}
+          {`Every 15 minutes, a new twist appears 🌀. Complete it, level up, and keep building your site stronger and sharper. There's no "Round 2" or "next stage" – this is the one and only boss level.`}
           <br className="hidden md:block" />
-          {`Your mission? Survive the twists, build your site, and conquer the Web-a-thon.`}
+          {`Your mission? Survive the twists, build your site, and conquer the Web-a-thon'25.`}
           <br className="hidden md:block" />
           {`Because here, it's not just about coding – it's about adaptation, creativity, and rising to every challenge.`}
         </p>
@@ -151,7 +151,7 @@ export default function App() {
         className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
       >
         <h2 className="text-2xl mb-6 hover:text-[#c101fb] transition-colors duration-300">
-          Highlights
+          Highlights 🌟
         </h2>
         <ul className="text-sm leading-relaxed list-disc list-inside hover:scale-105 transition-transform duration-300">
           <li>FREE REGISTRATION</li>
@@ -166,14 +166,29 @@ export default function App() {
         className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
       >
         <h2 className="text-2xl mb-6 hover:text-[#c101fb] transition-colors duration-300">
-          Rules / Quest Guidelines
+          Rules / Quest Guidelines 🔮
         </h2>
         <ul className="text-sm leading-relaxed list-disc list-inside hover:scale-105 transition-transform duration-300">
-          <li>1: Team or individual participation allowed.</li>
-          <li>2: A team can have a maximum of 3 members</li>
-          <li>3: Cross college and Cross year teams are allowed</li>
-          <li>4: Only students from 1st, 2nd and 3rd year can participate</li>
-          <li>5: Only one laptop is allowed per team</li>
+          <li>Team or individual participation allowed.</li>
+          <li>A team can have a maximum of 3 members</li>
+          <li>Cross college and Cross year teams are allowed</li>
+          <li>Only students from 1st, 2nd and 3rd year can participate</li>
+          <li>Only one laptop is allowed per team</li>
+        </ul>
+      </section>
+
+
+       {/* Rewards */}
+      <section
+        id="rewards"
+        className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
+      >
+        <h2 className="text-2xl mb-6 hover:text-[#c101fb] transition-colors duration-300">
+          Rewards 🏆
+        </h2>
+        <ul className="text-sm leading-relaxed list-disc list-inside hover:scale-105 transition-transform duration-300">
+          <li>Certificates for all participants ⚡</li>
+          <li>Special recognition for winners 🏅</li>
         </ul>
       </section>
 
@@ -183,34 +198,38 @@ export default function App() {
         className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
       >
         <h2 className="text-2xl mb-6 hover:text-[#c101fb] transition-colors duration-300">
-          Event Date
+          Event Date 📆
         </h2>
         <p className="text-sm mb-8 hover:scale-105 transition-transform duration-300">
           {" "}
           11th September 2025
         </p>
         <h2 className="text-2xl mb-6 hover:text-[#c101fb] transition-colors duration-300">
-          Venue
+          Venue 📍
         </h2>
         <p className="text-sm hover:scale-105 transition-transform duration-300">
           Elite Seminar Hall, Jeppiaar Engineering College
         </p>
       </section>
 
-      {/* Rewards */}
+       {/* Contact */}
       <section
-        id="rewards"
+        id="contact"
         className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
       >
         <h2 className="text-2xl mb-6 hover:text-[#c101fb] transition-colors duration-300">
-          Rewards
+          For any queries 📞
         </h2>
-        <ul className="text-sm leading-relaxed list-disc list-inside hover:scale-105 transition-transform duration-300">
-          <li>Certificates for all participants ⚡</li>
-          <li>Special recognition for winners 🏅</li>
-        </ul>
-      </section>
+        <p className="text-sm mb-8 hover:scale-105 transition-transform duration-300">
+          {" "}
+          Asfar A: +91 98949 54524
+          Sandhiya: +91 87782 55447
+        </p>
+        </section>
+
+     
     </>
   );
 
 }
+
