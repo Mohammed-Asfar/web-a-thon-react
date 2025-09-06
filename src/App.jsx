@@ -130,14 +130,14 @@ export default function App() {
         className="py-16 md:py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
       >
         <h2 className="text-xl md:text-2xl mb-6 hover:text-[#c101fb] transition-colors duration-300">
-          About
+          About 🚀
         </h2>
         <p className="text-xs md:text-sm leading-relaxed hover:scale-105 transition-transform duration-300 px-4 md:px-0">
           {`Welcome to Web-a-thon'25 – the ultimate website quest!`}
           <br className="hidden md:block" />
-          {`You've got 2 hours on the clock ⏱, one topic, and a bunch of surprise quests waiting to crash your comfort zone.`}
+          {`You've got 2 hours on the clock ⏰, one topic, and a bunch of surprise quests waiting to crash your comfort zone.`}
           <br className="hidden md:block" />
-          {`Every 15 minutes, a new twist appears 🌀. Complete it, level up, and keep building your site stronger and sharper. There's no "Round 2" or "next stage" – this is the one and only boss level.`}
+          {`Every 15 minutes, a new twist appears 🌀. Complete it, level up, and keep building your site stronger and sharper 💪. There's no "Round 2" or "next stage" – this is the one and only boss level.`}
           <br className="hidden md:block" />
           {`Your mission? Survive the twists, build your site, and conquer the Web-a-thon'25.`}
           <br className="hidden md:block" />
@@ -223,6 +223,7 @@ export default function App() {
         <p className="text-sm mb-8 hover:scale-105 transition-transform duration-300">
           {" "}
           Asfar A: +91 98949 54524
+          <br>
           Sandhiya: +91 87782 55447
         </p>
         </section>
@@ -232,4 +233,5 @@ export default function App() {
   );
 
 }
+
 
