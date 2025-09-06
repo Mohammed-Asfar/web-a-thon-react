@@ -166,12 +166,14 @@ export default function App() {
         className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
       >
         <h2 className="text-2xl mb-6 hover:text-[#c101fb] transition-colors duration-300">
-          Rules / Eligibility
+          Rules / Quest Guidelines
         </h2>
         <ul className="text-sm leading-relaxed list-disc list-inside hover:scale-105 transition-transform duration-300">
-          <li>Team or individual participation allowed.</li>
-          <li>A team can have a maximum of 3 members</li>
-          <li>Cross college and Cross year teams are allowed</li>
+          <li>1: Team or individual participation allowed.</li>
+          <li>2: A team can have a maximum of 3 members</li>
+          <li>3: Cross college and Cross year teams are allowed</li>
+          <li>4: Only students from 1st, 2nd and 3rd year can participate</li>
+          <li>5: Only one laptop is allowed per team</li>
         </ul>
       </section>
 
@@ -191,7 +193,7 @@ export default function App() {
           Venue
         </h2>
         <p className="text-sm hover:scale-105 transition-transform duration-300">
-          Chamber - 1, Jeppiaar Engineering College
+          Elite Seminar Hall, Jeppiaar Engineering College
         </p>
       </section>
 
@@ -204,10 +206,11 @@ export default function App() {
           Rewards
         </h2>
         <ul className="text-sm leading-relaxed list-disc list-inside hover:scale-105 transition-transform duration-300">
-          <li>Certificates for all participants</li>
-          <li>Special recognition for winners</li>
+          <li>Certificates for all participants ⚡</li>
+          <li>Special recognition for winners 🏅</li>
         </ul>
       </section>
     </>
   );
+
 }
