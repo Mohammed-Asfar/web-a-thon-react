@@ -169,7 +169,7 @@ export default function App() {
           Rules / Quest Guidelines 🔮
         </h2>
         <ul className="text-sm leading-relaxed list-disc list-inside hover:scale-105 transition-transform duration-300">
-          <li>Team or individual participation allowed.</li>
+          <li>Team or individual participation allowed</li>
           <li>A team can have a maximum of 3 members</li>
           <li>Cross college and Cross year teams are allowed</li>
           <li>Only students from 1st, 2nd and 3rd year can participate</li>
@@ -233,5 +233,6 @@ export default function App() {
   );
 
 }
+
 
 
