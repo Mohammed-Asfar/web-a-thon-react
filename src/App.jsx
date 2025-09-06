@@ -213,20 +213,21 @@ export default function App() {
       </section>
 
        {/* Contact */}
-      <section
-        id="contact"
-        className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
-      >
-        <h2 className="text-2xl mb-6 hover:text-[#c101fb] transition-colors duration-300">
-          For any queries 📞
-        </h2>
-        <p className="text-sm mb-8 hover:scale-105 transition-transform duration-300">
-          {" "}
-          Asfar A: +91 98949 54524
-          <br>
-          Sandhiya: +91 87782 55447
-        </p>
-        </section>
+      {/* Contact */}
+<section
+  id="contact"
+  className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
+>
+  <h2 className="text-2xl mb-6 hover:text-[#c101fb] transition-colors duration-300">
+    For any queries 📞
+  </h2>
+  <p className="text-sm mb-8 hover:scale-105 transition-transform duration-300">
+    Asfar A: +91 98949 54524
+    <br />
+    Sandhiya: +91 87782 55447
+  </p>
+</section>
+
 
      
     </>
