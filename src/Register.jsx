@@ -221,11 +221,28 @@ export default function RegisterPage({ onNavigate }) {
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          action="/success.html"  // <-- redirect after successful submit
+          action="/success.html"
           className="space-y-4 md:space-y-6"
           onSubmit={(e) => {
-            if (!validateForm()) {
-              e.preventDefault();
+            e.preventDefault();
+            if (validateForm()) {
+              // If validation passes, submit the form manually
+              const form = e.target;
+              const formData = new FormData(form);
+              
+              fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+              })
+              .then(() => {
+                // Redirect to success page
+                window.location.href = '/success.html';
+              })
+              .catch((error) => {
+                console.error('Form submission error:', error);
+                alert('There was an error submitting your registration. Please try again.');
+              });
             }
           }}
         >
