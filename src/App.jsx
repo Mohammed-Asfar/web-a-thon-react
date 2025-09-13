@@ -202,13 +202,7 @@ export default function App() {
         </h2>
         <p className="text-sm mb-8 hover:scale-105 transition-transform duration-300">
           {" "}
-          11th September 2025
-        </p>
-        <h2 className="text-2xl mb-6 hover:text-[#c101fb] transition-colors duration-300">
-          Venue 📍
-        </h2>
-        <p className="text-sm hover:scale-105 transition-transform duration-300">
-          Elite Seminar Hall, Jeppiaar Engineering College
+          19th September 2025
         </p>
       </section>
 
