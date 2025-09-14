@@ -218,7 +218,7 @@ export default function App() {
   <p className="text-sm mb-8 hover:scale-105 transition-transform duration-300">
     Asfar A: +91 98949 54524
     <br />
-    Sandhiya: +91 87782 55447
+    Wafa Zainab: +91 95005 71685
   </p>
 </section>
 
